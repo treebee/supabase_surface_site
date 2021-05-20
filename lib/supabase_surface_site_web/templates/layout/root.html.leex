@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <%= csrf_meta_tag() %>
+    <%= live_title_tag assigns[:page_title] || "Supabase Surface", suffix: " · Phoenix Framework" %>
+    <link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+  </head>
+  <body class="bg-dark-800">
+    <header class="bg-dark-700 bg-opacity-50 text-gray-200 border-b border-brand-800 py-8">
+      <div class="container mx-auto lg:max-w-4xl">
+        <h1 class="text-2xl font-bold">Supabase Surface</h1>
+        <h2 class="text-lg font-semibold">
+          Surface Components and Utilities for Supabase
+        </h2>
+      </div>
+    </header>
+    <main class="container mx-auto lg:max-w-4xl">
+      <%= @inner_content %>
+    </main>
+  </body>
+</html>
